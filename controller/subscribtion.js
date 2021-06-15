@@ -1,5 +1,5 @@
-var sql = require("mssql");
-var { sql, poolPromise } = require("../connection/db");
+
+var { poolPromise } = require("../connection/db");
 
 exports.subscribe = async (req, res, next) => {
   try {
