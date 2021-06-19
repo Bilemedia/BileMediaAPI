@@ -1,0 +1,11 @@
+{
+    "customermobile":"61XXXXXXX",
+    "cardid":"123456",
+    "tranno":2021,
+    "trandate":"6/9/2021",
+    "refno":"ref100",
+    "remarks":"Testing subscribtion API",
+    "accountno":"303030", 
+    "amount":"8",
+    "clientId":"d3cce538-9e94-4339-ba79-7a2d4d531d27"
+}

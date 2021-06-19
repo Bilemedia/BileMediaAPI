@@ -3,13 +3,14 @@ require('dotenv').config()
 // DB.js config for your database  
 const sql = require('mssql')  
 const config = {  
-user: process.env.SQL_USER,  
+ user: process.env.SQL_USER,  
 password: process.env.SQL_PASSWORD,  
 server: process.env.SERVER,  
 database: process.env.DATABASE,
+//authentication: { type: 'default', options: { userName: process.env.SQL_USER, password: process.env.SQL_PASSWORD } },
 options: {
     trustedConnection: true,
-    encrypt: true,
+    encrypt: false,
     trustServerCertificate: true,
 
   },  

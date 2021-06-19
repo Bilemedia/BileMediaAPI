@@ -1,13 +1,12 @@
 var express = require('express');  
 require('dotenv').config() 
-var app = express();  
-//const cookieParser = require('cookie-parser')
-//const morgan = require('morgan')
-
+ 
+const getPort = require('get-port')
+const bodyFormat = require('./body.json')
+const app = express(); 
 //express middlewares
 app.use(express.json({extended: false}))
 app.use(express.urlencoded())
-//app.use(cookieParser)
 
 app.use(function (req, res, next) {  
     res.setHeader('Content-Type', 'application/json')
@@ -17,8 +16,10 @@ res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
 next();  
 });  
 
-//app.use(morgan('dev'))
-
+app.get('/', (req, res) => {
+   
+    return res.send(bodyFormat)
+})
 // import routes 
 const subscribtionRoute = require('./routes/subscribtion')
 //const authRoute = require('./routes/auth')
@@ -32,7 +33,3 @@ const server = app.listen(PORT, () => {
 console.log(`Server started on PORT: ${process.env.PORT}`);  
 });  
 
-// process.on('uncaughtException', function (err) {
-//     console.log(err);
-//     //server.close
-// }); 
