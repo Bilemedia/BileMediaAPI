@@ -48,9 +48,15 @@ exports.subscribe = async (req, res, next) => {
        next() 
       
       }
-      if ((amount === '' || amount === null) && amount > 5)
+      if (amount === '' || amount === null)
       {
         return res.status(400).json({ success: false, error:'Amount is required' });
+        next() 
+       
+       }
+       if (amount < 5)
+      {
+        return res.status(400).json({ success: false, error:'Amount should be greater than 5' });
         next() 
        
        }
