@@ -48,9 +48,9 @@ exports.subscribe = async (req, res, next) => {
        next() 
       
       }
-      if (amount === '' || amount === null)
+      if ((amount === '' || amount === null) && amount > 5)
       {
-        return res.status(400).json({ success: false, error:'Customer card number is required' });
+        return res.status(400).json({ success: false, error:'Amount is required' });
         next() 
        
        }
