@@ -76,7 +76,7 @@ exports.subscribe = async (req, res, next) => {
       });
   } catch (err) {
     console.log(err.message);
-    res.status(400).json({ message: "invalid" });
+    res.status(400).json({ message: "invalid Transaction" });
    
   }
 };
