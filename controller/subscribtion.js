@@ -62,14 +62,14 @@ exports.subscribe = async (req, res, next) => {
        }
     const result = await pool
       .request()
-      .input("Customermobile", customermobile)
-      .input("Amount", amount)
-      .input("Cardid", cardid)
-      .input("Tranno", tranno)
-      .input("Trandate", trandate)
-      .input("Accountno", accountno)
-      .input("Refno", refno)
-      .input("Remarks", remarks)
+      .input("customermobile", customermobile)
+      .input("amount", amount)
+      .input("cardid", cardid)
+      .input("tranno", tranno)
+      .input("trandate", trandate)
+      .input("accountno", accountno)
+      .input("refno", refno)
+      .input("remarks", remarks)
       .execute("insertVCReceipt")
       .then((recordSet) => {
         res.status(200).json({ success: true, recordSet });
